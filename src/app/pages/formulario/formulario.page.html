@@ -1,0 +1,39 @@
+
+<ion-content>
+  <div class="image-container">
+    <a href="../login/login.page.html">
+        <img src="../../../assets/img/Logotipo-N.png" alt="Logotipo-N">
+     </a>
+  </div>
+  <form #signupForm="ngForm" (ngSubmit)="submitForm(signupForm)">
+    <ion-item>
+      <ion-label position="floating">Correo electrónico</ion-label>
+      <ion-input type="email" name="email" ngModel required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nombre de usuario</ion-label>
+      <ion-input type="text" name="username" ngModel required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" name="password" ngModel required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Repetir contraseña</ion-label>
+      <ion-input type="password" name="confirmPassword" ngModel required></ion-input>
+    </ion-item>
+
+    <ion-button (click)="submitForm(signupForm)">Registrarse</ion-button>
+  </form>
+  <div class="links-container">
+    <a (click)="tengoCuenta()"
+      style="font-weight: bold;">Ya tengo una cuenta
+    </a>
+  </div>
+  <div class="powered-by">
+    Powered by ReikoM
+  </div>
+</ion-content>

@@ -1,0 +1,78 @@
+.correo {
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+  margin: 20px auto;
+  --background: #E4E4E4; /* Cambia "grey" por el color gris que prefieras */
+  color: grey;
+  font-weight: bold;
+  text-align: center;
+}
+ 
+ion-button {
+  display: block;
+  margin: 10px auto; /* Reducimos el margen superior para acercar el botón */
+  max-width: 80%;
+  --border-radius: 200px;
+  --background: black;
+}
+
+ion-content {
+  --background: white; /* Cambia este valor al color que desees */
+
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh; /* Redujimos aún más la altura de la imagen */
+  margin: 10px;
+}
+
+img {
+  margin: 40% 0 0 0; /* 20px de margen arriba y 0 de margen en los demás lados */
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+.powered-by {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f0f0f0; /* Cambia el color de fondo según tus preferencias */
+  padding: 10px 0; /* Ajusta el espacio alrededor del texto según tus preferencias */
+  font-size: 16px; /* Ajusta el tamaño de fuente según tus preferencias */
+  font-weight: bold; /* Agrega negritas (bold) al texto */
+}
+
+/* Estilos CSS para los enlaces "Olvidaste la contraseña" y "Crear cuenta" */
+.links-container {
+  text-align: center;
+  margin-top: 10px; /* Ajusta el margen superior según tus preferencias */
+}
+
+.links-container a {
+  text-decoration: none; /* Quita la subrayado de los enlaces */
+  color: #007bff; /* Cambia el color de los enlaces según tus preferencias */
+}
+
+.links-container a:hover {
+  text-decoration: underline; /* Agrega un subrayado cuando se pasa el cursor sobre los enlaces */
+}
+
+/* Estilos CSS para el icono en el botón */
+ion-button .start {
+  margin-right: 8px; /* Espacio entre el icono y el texto del botón (ajusta según tus preferencias) */
+}
+
+/* Alinea verticalmente el icono y el texto en el botón */
+ion-button .button-inner {
+  display: flex;
+  align-items: center;
+}
+
+

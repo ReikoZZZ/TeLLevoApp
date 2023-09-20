@@ -1,0 +1,48 @@
+<ion-content>
+  <div class="image-container">
+    <a href="../login/login.page.html">
+        <img src="../../../assets/img/Logotipo-N.png" alt="Logotipo-N">
+     </a>
+  </div>
+  <br>
+  <div>
+    <div>
+      <ion-input class="correo"
+        [(ngModel)]="email" label="Correo" labelPlacement="floating" 
+        placeholder="Ingrese correo">
+      </ion-input>
+    </div>
+
+    <div>
+      <ion-input class="correo" 
+        [(ngModel)]="password" label="Contraseña" type="password" 
+        labelPlacement="floating" 
+        placeholder="Ingrese contraseña">
+      </ion-input>
+    </div>
+    <ion-button (click)="irMenu()">
+      <ion-icon slot="start" name="log-in"></ion-icon>
+      Iniciar sesión
+    </ion-button>
+
+  <br>
+  <div class="links-container">
+    <a id="present-alert" style="font-weight: bold;">Olvidaste la contraseña</a>
+  </div>
+  <ion-alert
+      trigger="present-alert"
+      header="¿Tienes problemas para entrar?"
+      subHeader="Introduce tu correo electrónico o nombre de usuario y te enviaremos un enlace para que vuelvas a entrar en tu cuenta."
+      [buttons]="alertButtons"
+      [inputs]="alertInputs"
+  ></ion-alert>
+  <div class="links-container">
+    <a (click)="crearCuenta()"
+      style="font-weight: bold;">Crear cuenta
+    </a>
+  </div>
+  </div>
+  <div class="powered-by">
+    Powered by ReikoM
+  </div>
+</ion-content>

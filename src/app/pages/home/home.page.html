@@ -1,0 +1,74 @@
+
+<ion-content class="fondo">
+  <ion-button class="boton-switch"
+  fill="clear"
+  (click)="InterfazChofer()">
+  <ion-icon class="icono" style="color: white;" name="car-outline"></ion-icon>
+</ion-button>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4" id="open-modal">
+        <ion-icon name="home"></ion-icon>
+        <p>Servicios</p>
+      </ion-col>
+      <ion-col size="4">
+        <ion-router-link routerLink="/home">
+        <!-- Reemplaza el ícono con tu logotipo -->
+          <img  src="../../../assets/img/Logotipo-N.png" alt="Logo"  class="imagen">
+        </ion-router-link>
+      </ion-col>
+      <ion-col (click)="configuraciones()" size="4">
+        <ion-icon name="settings"></ion-icon>
+        <p>Configuración</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content> 
+
+<ion-modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+<ng-template>
+  <ion-content >
+    <div class="drag-handle" ></div>
+    <div class="titulo-modal">
+      <span class="texto-pequeno">Hola usuario,</span><br>
+      ¿Qué quieres hacer?
+    </div>
+    <div class="bloques">
+      <div class="bloque">
+        <img src="../../../assets/img/cutcheao.png">
+        Viajar
+      </div>
+      <div class="bloque">
+        <img src="../../../assets/img/Cat_wgp-reporters_car.webp">
+        Reserva
+      </div>
+      <div class="bloque">
+        <img src="../../../assets/img/MackCars3.webp" style="height: 53%;">
+        Enviar
+      </div>
+    </div>
+    <div class="primary-content">
+      <div class="resp-textbox">
+        <ion-icon style="padding: 5px;" name="search-outline"></ion-icon>
+        <input type="text" placeholder="Introduce tu ruta" />
+      </div>
+    </div>
+    <div class="primary-content">
+    <div class="center-left">
+      <ion-icon name="briefcase"></ion-icon>
+      <p style="padding: 10px;">Añadir trabajo</p>
+    </div>
+
+    <div class="center-left">
+      <ion-icon name="time-outline"></ion-icon>
+      <p style="padding: 10px;">Av. La florida 748471</p>
+    </div>
+
+    <div class="center-left">
+      <ion-icon name="time-outline"></ion-icon>
+      <p style="padding: 10px;">Av. La florida 748471</p>
+    </div>
+  </div>
+  </ion-content>
+</ng-template>
+</ion-modal>

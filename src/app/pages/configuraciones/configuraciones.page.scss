@@ -1,0 +1,166 @@
+/* Estilo para la sección de información de usuario */
+.user-info {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #000000;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+/* Estilo para la foto de usuario circular */
+.user-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Estilo para el nombre de usuario */
+.user-details h3 {
+  margin: 0;
+}
+
+/* Estilo para el botón "Ver Perfil" */
+.view-profile-button {
+  margin-top: 10px;
+}
+
+/* Estilo para los elementos .custom-box1 */
+.custom-box1 {
+  background-color: #333333;
+  padding: 13px;
+  margin: 5px;
+  color: #ffffff;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.custom-box1 ion-icon {
+  font-size: 24px;
+  margin-right: 8px;
+  margin-bottom: px; /* Agrega margen inferior para espaciar el icono del nombre */
+  align-self: flex-start;
+}
+
+.custom-box1 ion-label {
+  text-align: left;
+  margin: 0;
+}
+
+
+
+
+
+/* Estilo para el rectángulo con fondo negro claro */
+.custom-box {
+  background-color: #333333; /* Color de fondo negro claro */
+  padding: 13px; /* Espaciado interno */
+  margin: 5px; /* Margen entre los rectángulos */
+  color: #ffffff; /* Color del texto */
+  border-radius: 9px; /* Esquinas redondeadas */
+}
+
+/* Estilo para la sección de información de usuario */
+.user-info {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #000000;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+/* Estilo para la foto de usuario circular */
+.user-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Estilo para el nombre de usuario */
+.user-details h3 {
+  margin: 0;
+}
+
+/* Estilo para los elementos .custom-box1 */
+.custom-box1 {
+  background-color: #333333;
+  padding: 13px;
+  margin: 5px;
+  color: #ffffff;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.custom-box1 ion-icon {
+  font-size: 24px;
+  margin-right: 8px;
+  margin-bottom: px; /* Agrega margen inferior para espaciar el icono del nombre */
+  align-self: flex-start;
+}
+
+.custom-box1 ion-label {
+  text-align: left;
+  margin: 0;
+}
+
+/* Estilo para el rectángulo con fondo negro claro */
+.custom-box {
+  background-color: #333333; /* Color de fondo negro claro */
+  padding: 13px; /* Espaciado interno */
+  margin: 5px; /* Margen entre los rectángulos */
+  color: #ffffff; /* Color del texto */
+  border-radius: 9px; /* Esquinas redondeadas */
+}
+
+/* Estilo para el botón "Cerrar Sesión" */
+.logout-button {
+  text-align: center;
+  margin: 10px; /* Agrega margen en todos los lados para separar el botón de los bordes */
+  background-color: #ff0000; /* Color de fondo rojo */
+  color: #ffffff; /* Color del texto */
+  padding: 10px 0; /* Espaciado interno */
+  border-radius: 6px; /* Esquinas redondeadas */
+  cursor: pointer;
+}
+
+
+.iconStyle {
+  font-size: 2rem; /* Tamaño de los íconos */
+}
+
+/* Estilos para el ion-grid */
+.ionGrid {
+  background-color: black;
+  box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.2); /* Sombra en la parte inferior del menú */
+  z-index: 1; /* Ajusta el z-index según sea necesario para que esté por encima del contenido */
+}
+
+/* Ajusta el margen inferior del contenido principal */
+ion-content {
+  margin-bottom: 80px; /* Ajusta el valor según sea necesario para evitar la superposición */
+}
+
+.ionCol {
+  text-align: center;
+  padding: 0px;
+}
+
+.imagen{
+  border-radius: 50%; /* Hace que la imagen sea redondeada */
+  border: 2px solid #fff; /* Agrega un borde blanco de 3 píxeles */
+  width: 60px; /* Ajusta el ancho de la imagen */
+  height: 60px; /* Ajusta la altura de la imagen */
+}
+
+ion-back-button{
+  color: white;
+}
+
+

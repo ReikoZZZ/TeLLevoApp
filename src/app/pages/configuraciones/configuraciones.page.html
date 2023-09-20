@@ -1,0 +1,151 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Configuraciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="user-info"> <!-- Agregamos la clase user-info aquí -->
+    <ion-avatar class="user-avatar">
+      <img src="../../assets/img/mono.png" alt="Foto de usuario" style="border: 2px solid white;">
+    </ion-avatar>
+    <div class="user-details">
+      <h3>Nombre de Usuario</h3>
+      <h5 (click)="perfil()">ver perfil</h5>
+    </div>
+  </div>
+  <hr style="border: 1px solid white;">
+  <ion-grid class="rounded-container">
+    <!-- Primera fila -->
+    <ion-row>
+      <!-- Columna 1 -->
+      <ion-col size="6">
+        <div class="custom-box1">
+          <ion-icon name="newspaper-outline"></ion-icon>
+          <ion-label class="ion-text-start">Historial de viajes</ion-label>
+        </div>
+      </ion-col>
+
+      <!-- Columna 2 -->
+      <ion-col size="6">
+        <div class="custom-box1">
+          <ion-icon name="help-outline"></ion-icon>
+          <ion-label class="ion-text-start">Ayuda</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <!-- Segunda fila -->
+    <ion-row>
+      <!-- Columna 1 -->
+      <ion-col size="6">
+        <div class="custom-box1">
+          <ion-icon name="fitness-outline"></ion-icon>
+          <ion-label class="ion-text-start">Soporte</ion-label>
+        </div>
+      </ion-col>
+
+      <!-- Columna 2 -->
+      <ion-col size="6">
+        <div class="custom-box1">
+          <ion-icon name="settings-outline"></ion-icon>
+          <ion-label class="ion-text-start">Configuraciones</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <!-- Tercera fila -->
+    <ion-row>
+      <!-- Columna 1 -->
+      <ion-col size="6">
+        <div class="custom-box1">
+          <ion-icon name="eye-off-outline"></ion-icon>
+          <ion-label class="ion-text-start">Privacidad</ion-label>
+        </div>
+      </ion-col>
+
+      <!-- Columna 2 -->
+      <ion-col size="6">
+        <div class="custom-box1">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <ion-label class="ion-text-start">Seguridad</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+    
+    <!-- Cuarta fila -->
+    <ion-row class="">
+      <!-- Columna única para las tres opciones -->
+      <ion-col class="ion-text-center" size="12">
+        <div class="custom-box text">
+          <ion-label>Ver mas</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+    <hr style="border: 1px solid white; margin: 10px 0;">
+    <ion-row>
+      <!-- Columna única para las tres opciones -->
+      <ion-col size="12">
+        <div class="ion-text-start">
+          <ion-icon name="key-outline"></ion-icon>
+          <ion-label>Restablecer contraseña</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+    <hr style="border: 1px solid white; margin: 10px 0;">
+    <ion-row>
+      <!-- Columna única para las tres opciones -->
+      <ion-col size="12">
+        <div class="ion-text-start">
+          <ion-icon name="volume-mute-outline"></ion-icon>
+          <ion-label>Sonido y vibracion</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+    <hr style="border: 1px solid white; margin: 10px 0;">
+    <ion-row>
+      <!-- Columna única para las tres opciones -->
+      <ion-col size="12">
+        <div class="ion-text-start">
+          <ion-icon name="volume-mute-outline"></ion-icon>
+          <ion-label>Ayuda de la comunidad</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+    <hr style="border: 1px solid white; margin: 10px 0;">
+    
+  </ion-grid>
+    <!-- Reemplaza el ícono con tu logotipo -->
+    <div class="logout-button" id="present-alert">
+      Cerrar Sesión
+    </div>
+    <ion-alert
+      trigger="present-alert"
+      header="¿Estas seguro que deseas cerrar sesion?"
+      [buttons]="alertButtons"
+    ></ion-alert>
+
+</ion-content>
+<div class="ionGrid">
+  <hr style="border: 1px solid white; margin: 10px 0;">
+  <ion-row>
+    <ion-col (click)="inicio()" class="ionCol" size="4">
+      <ion-icon class="iconStyle" name="home"></ion-icon>
+      <p>Inicio</p>
+    </ion-col>
+    <ion-col class="ionCol" size="4">
+      <ion-router-link routerLink="/home">
+      <!-- Reemplaza el ícono con tu logotipo -->
+        <img  src="../../../assets/img/Logotipo-N.png" alt="Logo"  class="imagen">
+      </ion-router-link>
+    </ion-col>
+    <ion-col class="ionCol" size="4">
+      <ion-icon class="iconStyle" name="settings"></ion-icon>
+      <p>Configuración</p>
+    </ion-col>
+  </ion-row>
+</div>
+
