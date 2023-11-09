@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "email": "sea",
+      "nombre": "sea",
+      "contrasena": "sea",
+      "id": 1,
+      "sobreMi": "xd"
+
+    },
+    {
+      "email": "dea",
+      "nombre": "dea",
+      "contrasena": "dea",
+      "id": 2
+    },
+    {
+      "email": "xd",
+      "nombre": "mamalo",
+      "contrasena": "mamalo",
+      "id": 3,
+      "sobreMi": "xasdasd"
+    },
+    {
+      "email": "a",
+      "nombre": "a",
+      "contrasena": "a",
+      "id": 4
+    },
+    {
+      "email": "sebalol@gmail.com",
+      "nombre": "allan",
+      "contrasena": "allan",
+      "id": 5,
+      "sobreMi": "juanito"
+    },
+    {
+      "email": "demian",
+      "nombre": "demian",
+      "contrasena": "demian",
+      "id": 6
+    }
+  ],
+  "auto": [
+    {
+      "Marca": "sebalol@gmail.com",
+      "Modelo": "allan",
+      "Color": "allan",
+      "id": "",
+      "patente": "juanito"
+    }
+  ],
+  "perfil": [
+    {
+
+      "sobreMi": "",
+      "Edad": ""
+    }
+  ]
+}

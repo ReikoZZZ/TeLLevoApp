@@ -12,7 +12,7 @@
     <div class="profile-picture">
       <img src="../../../assets/img/mono.png" alt="Foto de perfil">
     </div>
-    <h2>Sebastian V.</h2>
+    <h2>{{ user.nombre }}</h2>
     <div>
       <ion-icon name="star" class="user-rating"></ion-icon>
       <span class="edad"> 5   |</span> <!-- Calificación -->
@@ -21,17 +21,23 @@
       <span class="sub">Años</span></div>
     </div>
   </div>
-  <ion-card>
+  <ion-card>      
     <div class="custom-box1">
       <ion-item>
-        <ion-icon name="language-outline" slot="start"></ion-icon>
-        <ion-label>Idioma:</ion-label>
-        <ion-input [(ngModel)]="idioma" placeholder="Ej: Español, Inglés"></ion-input>
+         <ion-icon name="language-outline" slot="start"></ion-icon>
+        <ion-select multiple="true" [(ngModel)]="idiomasSeleccionados" value="Español">
+          <ion-select-option *ngFor="let idioma of idiomasDisponibles" [value]="idioma.id">
+            {{ idioma.nombre }}
+          </ion-select-option>
+        </ion-select>
       </ion-item>
       <ion-item>
         <ion-icon name="location-outline" slot="start"></ion-icon>
-        <ion-label>Comuna:</ion-label>
-        <ion-input [(ngModel)]="comuna" placeholder="Ej: Puente Asalto"></ion-input>
+        <ion-select [(ngModel)]="comunaSeleccionada" >
+          <ion-select-option *ngFor="let comuna of comunasMetropolitana" [value]="comuna">
+            {{ comuna }}
+          </ion-select-option>
+        </ion-select>
       </ion-item>
     </div>
   </ion-card>
@@ -41,11 +47,25 @@
       <ion-card-title>Sobre Mí</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-textarea [(ngModel)]="sobreMi" placeholder="Escribe sobre ti"></ion-textarea>
+      <ion-textarea [(ngModel)]="sobreMi" placeholder="{{ user.sobreMi }}"></ion-textarea>
     </ion-card-content>
   </ion-card>
-  <ion-button expand="full" (click)="guardarCambios()">Guardar Cambios</ion-button>
+  <div class="button-container">
+    <ion-button expand="full" class="custom-button" (click)="cambiarEmail()">Guardar Cambios</ion-button>
+  </div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Correo electrónico</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-textarea [(ngModel)]="email" placeholder="{{ user.email }}"></ion-textarea>
+    </ion-card-content>
+  </ion-card>
+  <div class="button-container">
+    <ion-button expand="full" class="custom-button" (click)="cambiarEmail()">Guardar Cambios</ion-button>
+  </div>
   
+
 </ion-content>
 <div class="ionGrid">
   <hr style="border: 1px solid white; margin: 10px 0;">

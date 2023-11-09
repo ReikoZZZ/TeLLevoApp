@@ -13,18 +13,24 @@
 
     <ion-item>
       <ion-label position="floating">Nombre de usuario</ion-label>
-      <ion-input type="text" name="username" ngModel required></ion-input>
-    </ion-item>
+      <ion-input type="text" name="nombre" ngModel required></ion-input>
+    </ion-item> 
 
     <ion-item>
       <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" name="password" ngModel required></ion-input>
+      <ion-input type="password" name="contrasena" ngModel required></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Repetir contraseña</ion-label>
       <ion-input type="password" name="confirmPassword" ngModel required></ion-input>
     </ion-item>
+
+    <!-- Mensaje de error para la verificación de contraseñas -->
+    <ion-text color="danger" *ngIf="signupForm.hasError('passwordMismatch', 'confirmPassword')">
+      Las contraseñas no coinciden.
+    </ion-text>
+
 
     <ion-button (click)="submitForm(signupForm)">Registrarse</ion-button>
   </form>
