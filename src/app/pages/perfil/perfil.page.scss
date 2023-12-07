@@ -1,4 +1,18 @@
-/* Estilo para el botón */
+ion-back-button{
+  color: white;
+}
+
+ion-button {
+  display: block;
+  margin: 10px auto; /* Reducimos el margen superior para acercar el botón */
+  max-width: 80%;
+  --border-radius: 200px;
+  --background: white;
+  font-style: bold;
+  color: black;
+}
+
+
 
 
 /* Estilo para el contenedor del botón (opcional, si es necesario) */

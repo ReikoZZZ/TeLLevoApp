@@ -24,6 +24,10 @@ export class ConfiguracionesPage implements OnInit {
     this.router.navigate(['/perfil']);
   }
 
+  ajustes() {
+    this.router.navigate(['/ajuste']);
+  }
+
   ngOnInit() {
     // Recupera los datos del usuario desde el almacenamiento local
     const userString = localStorage.getItem('currentUser');

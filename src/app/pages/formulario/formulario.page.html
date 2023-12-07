@@ -26,6 +26,8 @@
       <ion-input type="password" name="confirmPassword" ngModel required></ion-input>
     </ion-item>
 
+
+
     <!-- Mensaje de error para la verificación de contraseñas -->
     <ion-text color="danger" *ngIf="signupForm.hasError('passwordMismatch', 'confirmPassword')">
       Las contraseñas no coinciden.
@@ -43,3 +45,35 @@
     Powered by ReikoM
   </div>
 </ion-content>
+
+<ion-modal trigger="modalauto" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+  <ng-template>
+    <ion-card>
+      <ion-card-header>
+        Agrega un auto
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <!-- Formulario de información del auto -->
+          <ion-item>
+            <ion-label position="stacked">Marca</ion-label>
+            <ion-input class="input-field" placeholder="Ingrese la marca"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Modelo</ion-label>
+            <ion-input class="input-field" placeholder="Ingrese el modelo"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Color</ion-label>
+            <ion-input class="input-field" placeholder="Ingrese el color"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Patente</ion-label>
+            <ion-input class="input-field" placeholder="Ingrese el color"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+</ion-modal>
+

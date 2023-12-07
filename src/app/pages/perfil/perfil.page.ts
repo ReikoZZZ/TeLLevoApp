@@ -8,7 +8,6 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class PerfilPage implements OnInit {
   user: any; 
-  email: string = ''; 
   sobreMi: string = ''; // Valor inicial de Sobre Mí
   idiomasSeleccionados = ['es']; // Valor inicial de Idioma
   comunaSeleccionada = 'Puente Alto'; // Valor inicial de Comuna
@@ -41,31 +40,6 @@ export class PerfilPage implements OnInit {
   updateSobreMi() {
     // Asigna el valor del ion-textarea a la propiedad 'sobreMi' del usuario
     this.user.sobreMi = this.sobreMi;
-  
-    // Llama al servicio para actualizar el usuario en la base de datos
-    this.userService.updateUser(this.user.id, this.user).subscribe(
-      updatedUser => {
-        // Maneja la respuesta del servidor si es necesario
-        console.log('Usuario actualizado en la base de datos:', updatedUser);
-  
-        // Actualiza el usuario en el almacenamiento local
-        localStorage.setItem('currentUser', JSON.stringify(updatedUser));
-  
-        // Actualiza la propiedad 'user' del componente con los datos actualizados
-        this.user = updatedUser;
-  
-        console.log('Cambios guardados con éxito');
-      },
-      error => {
-        // Maneja errores si ocurren durante la solicitud PUT
-        console.error('Error al actualizar el usuario:', error);
-      }
-    );
-  }
-
-  cambiarEmail() {
-    // Asigna el valor del ion-textarea a la propiedad 'sobreMi' del usuario
-    this.user.email = this.email;
   
     // Llama al servicio para actualizar el usuario en la base de datos
     this.userService.updateUser(this.user.id, this.user).subscribe(

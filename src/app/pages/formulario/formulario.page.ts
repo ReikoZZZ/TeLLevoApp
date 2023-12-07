@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user.interface';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-formulario',
@@ -10,7 +11,11 @@ import { User } from 'src/app/models/user.interface';
   styleUrls: ['formulario.page.scss'],
 })
 export class FormularioPage {
-  constructor(private router: Router, private userService: UserService) {}
+  
+  constructor(private router: Router, 
+    private userService: UserService, 
+    private alertController: AlertController) {}
+
 
   tengoCuenta() {
     this.router.navigate(['/login']);

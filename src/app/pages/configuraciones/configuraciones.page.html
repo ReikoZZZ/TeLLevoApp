@@ -13,7 +13,7 @@
       <img src="../../assets/img/mono.png" alt="Foto de usuario" style="border: 2px solid white;">
     </ion-avatar>
     <div class="user-details">
-      <h3>{{ user.nombre }}</h3>
+      <h3 style="font-weight: bold;">{{ user.nombre.toUpperCase() }}</h3>
       <h5 (click)="perfil()">ver perfil</h5>
     </div>
   </div>
@@ -49,7 +49,7 @@
       </ion-col>
 
       <!-- Columna 2 -->
-      <ion-col size="6">
+      <ion-col size="6" (click)="ajustes()">
         <div class="custom-box1">
           <ion-icon name="settings-outline"></ion-icon>
           <ion-label class="ion-text-start">Configuraciones</ion-label>

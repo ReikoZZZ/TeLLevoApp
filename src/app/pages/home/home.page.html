@@ -1,13 +1,21 @@
-
 <ion-content>
   <div id="map"></div>
+  <div id="geocoder" class="geocoder"></div>
 
-  <ion-button *ngIf="user.id == 1"
+  <ion-button *ngIf="user.tieneAuto === 'SI'"
   class="boton-switch"
   fill="clear"
-  (click)="InterfazChofer()" id="modalauto">
+  (click)="InterfazChofer()">
   <ion-icon class="icono" style="color: white;" name="car-outline"></ion-icon>
+  </ion-button>
+    
+  <ion-button *ngIf="user.tieneAuto !== 'SI'"
+    class="boton-switch"
+    fill="clear"
+    (click)="manejarAccionesSegunAuto()">
+    <ion-icon class="icono" style="color: white;" name="car-outline"></ion-icon>
 </ion-button>
+
   <ion-grid>
     <ion-row>
       <ion-col size="4" id="open-modal">
@@ -15,9 +23,9 @@
         <p>Servicios</p>
       </ion-col>
       <ion-col size="4">
-        <ion-router-link routerLink="/home" >
-        <!-- Reemplaza el ícono con tu logotipo -->
-          <img  src="../../../assets/img/Logotipo-N.png" alt="Logo"  class="imagen">
+        <ion-router-link routerLink="/home">
+          <!-- Reemplaza el ícono con tu logotipo -->
+          <img src="../../../assets/img/Logotipo-N.png" alt="Logo" class="imagen">
         </ion-router-link>
       </ion-col>
       <ion-col (click)="configuraciones()" size="4">
@@ -26,84 +34,56 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-</ion-content> 
 
-<ion-modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
-<ng-template>
-  <ion-content >
-    <div class="drag-handle" ></div>
-    <div class="titulo-modal">
-      <span class="texto-pequeno">Hola usuario,</span><br>
-      ¿Qué quieres hacer?
-    </div>
-    <div class="bloques">
-      <div class="bloque">
-        <img src="../../../assets/img/cutcheao.png">
-        Viajar
-      </div>
-      <div class="bloque">
-        <img src="../../../assets/img/Cat_wgp-reporters_car.webp">
-        Reserva
-      </div>
-      <div class="bloque">
-        <img src="../../../assets/img/MackCars3.webp" style="height: 53%;">
-        Enviar
-      </div>
-    </div>
-    <div class="primary-content">
-      <div class="resp-textbox">
-        <ion-icon style="padding: 5px;" name="search-outline"></ion-icon>
-        <input id="ruta" #asRutovish type="text" placeholder="Introduce tu ruta" />
-      </div>
-    </div>
-    <div class="primary-content">
-    <div class="center-left">
-      <ion-icon name="briefcase"></ion-icon>
-      <p style="padding: 10px;">Añadir trabajo</p>
-    </div>
+  <ion-modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+    <ng-template>
 
-    <div class="center-left">
-      <ion-icon name="time-outline"></ion-icon>
-      <p style="padding: 10px;">Av. La florida 748471</p>
-    </div>
+      <ion-content>
 
-    <div class="center-left">
-      <ion-icon name="time-outline"></ion-icon>
-      <p style="padding: 10px;">Av. La florida 748471</p>
-    </div>
-  </div>
-  </ion-content>
-</ng-template>
-</ion-modal>
+        <div class="drag-handle"></div>
+        <div class="titulo-modal">
+          <span class="texto-pequeno">Hola usuario <span
+              style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: red;"> {{
+              user.nombre.toUpperCase() }}</span></span><br>
+          ¿Qué quieres hacer?
+        </div>
+
+        <div class="bloques">
+          <div class="bloque" (click)="pedirViaje()">
+            <img src="../../../assets/img/cutcheao.png">
+            Viajar
+          </div>
+          <div class="bloque">
+            <img src="../../../assets/img/Cat_wgp-reporters_car.webp">
+            Reserva
+          </div>
+          <div class="bloque">
+            <img src="../../../assets/img/MackCars3.webp" style="height: 53%;">
+            Enviar
+          </div>
+        </div>
+        <div class="primary-content">
 
 
-<ion-modal trigger="modalauto" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
-  <ng-template>
-    <ion-card>
-      <ion-card-header>
-        Agrega un auto
-      </ion-card-header>
-      <ion-card-content>
-        <ion-list>
-          <!-- Formulario de información del auto -->
-          <ion-item>
-            <ion-label position="stacked">Marca</ion-label>
-            <ion-input class="input-field" placeholder="Ingrese la marca"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="stacked">Modelo</ion-label>
-            <ion-input class="input-field" placeholder="Ingrese el modelo"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="stacked">Color</ion-label>
-            <ion-input class="input-field" placeholder="Ingrese el color"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="stacked">Patente</ion-label>
-            <ion-input class="input-field" placeholder="Ingrese el color"></ion-input>
-          </ion-item>
-        </ion-list>
-      </ion-card-content>
-    </ion-card>
-  </ng-template>
-</ion-modal>
+        </div>
+        <div class="primary-content">
+          <div class="center-left">
+            <ion-icon name="briefcase"></ion-icon>
+            <p style="padding: 10px;">Añadir trabajo</p>
+          </div>
+
+          <div class="center-left">
+            <ion-icon name="time-outline"></ion-icon>
+            <p style="padding: 10px;">Av. La florida 748471</p>
+          </div>
+
+          <div class="center-left">
+            <ion-icon name="time-outline"></ion-icon>
+            <p style="padding: 10px;">Av. La florida 748471</p>
+          </div>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+</ion-content>

@@ -44,6 +44,10 @@ const routes: Routes = [
     path: 'interfaz-chofer',
     loadChildren: () => import('./pages/interfaz-chofer/interfaz-chofer.module').then( m => m.InterfazChoferPageModule)
   },
+  {
+    path: 'ajuste',
+    loadChildren: () => import('./pages/ajuste/ajuste.module').then( m => m.AjustePageModule)
+  }
 ];
 
 @NgModule({

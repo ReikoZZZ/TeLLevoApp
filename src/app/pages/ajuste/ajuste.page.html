@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/configuraciones"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Configuraciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="content-container">
+    <ion-card class="custom-card">
+      <ion-card-header class="custom-card-header">
+        <ion-card-title>Correo Electrónico</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-input [(ngModel)]="email" placeholder="{{ user.email }}"></ion-input>
+      </ion-card-content>
+    </ion-card>
+    
+    <ion-card class="custom-card">
+      <ion-card-header class="custom-card-header">
+        <ion-card-title>Nombre de Usuario</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-input [(ngModel)]="nombre" placeholder="{{ user.nombre }}"></ion-input>
+      </ion-card-content>
+    </ion-card>
+
+    <div class="button-container">
+      <ion-button shape="round" expand="full" (click)="cambiarPerfil()">
+        Guardar Cambios
+      </ion-button>
+
+      <ion-button shape="round" color="danger" expand="full" (click)="showDeleteConfirm()">
+        <ion-icon name="trash"></ion-icon>
+        Eliminar Perfil
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

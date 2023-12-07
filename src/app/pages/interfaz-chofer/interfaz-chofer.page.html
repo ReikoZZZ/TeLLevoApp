@@ -1,9 +1,9 @@
-<ion-content class="fondo">
-  <ion-button class="boton-switch"
-    fill="clear"
-    (click)="InterfazChofer()">
+<!-- interfaz-chofer.page.html -->
+
+<ion-content>
+  <div id="map"></div>
+  <ion-button class="boton-switch" fill="clear" (click)="InterfazChofer()">
     <ion-icon class="icono" style="color: white;" name="person-circle-outline"></ion-icon>
-  
   </ion-button>
   <ion-grid>
     <ion-row>
@@ -12,9 +12,9 @@
         <p>Servicios</p>
       </ion-col>
       <ion-col size="4">
-        <ion-router-link routerLink="/login">
-        <!-- Reemplaza el ícono con tu logotipo -->
-          <img  src="../../../assets/img/Logotipo-N.png" alt="Logo"  class="imagen">
+        <ion-router-link routerLink="">
+          <!-- Reemplaza el ícono con tu logotipo -->
+          <img src="../../../assets/img/Logotipo-N.png" alt="Logo" class="imagen">
         </ion-router-link>
       </ion-col>
       <ion-col (click)="configuraciones()" size="4">
@@ -23,39 +23,25 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-</ion-content> 
+</ion-content>
 
-<ion-modal trigger="modal-chofer" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
-<ng-template>
-  <ion-content >
-    <div class="drag-handle" ></div>
-    <div class="titulo-modal">
-      <span class="texto-pequeno">Hola usuario,</span><br>
-      ¿Qué quieres hacer?
-    </div>
-    <div class="bloques">
-      <div class="bloque">
-        <img class="imagen-redonda" src="../../assets/img/mono.png" alt="Foto de usuario" style="border: 2px solid white;">
-        Juanito P.
-        <div>
-          Duoc, Puente Alto
+<ion-modal trigger="modal-chofer" [initialBreakpoint]="1" [breakpoints]="[0, 1]" >
+  <ng-template>
+    <ion-content>
+      <div class="drag-handle"></div>
+      <div class="titulo-modal">
+        <span class="texto-pequeno">Hola usuario,</span><br>
+        ¿Qué quieres hacer?
+      </div>
+      <div class="bloques">
+        <div *ngFor="let viaje of viajesDisponibles" class="bloque" (click)="ModificarDatos(viaje)">
+          <img class="imagen-redonda" src="../../assets/img/mono.png" alt="Foto de usuario" style="border: 2px solid white;">
+          {{ viaje.nombreUsuario }}   
+          <div class="nombre-ubicacion">
+            {{ viaje.nombreUbicacion.length > 18 ? viaje.nombreUbicacion.slice(0, 18) + '...' : viaje.nombreUbicacion }}
+          </div>
         </div>
       </div>
-      <div class="bloque">
-        <img class="imagen-redonda" src="../../assets/img/mono.png" alt="Foto de usuario" style="border: 2px solid white;">
-        Juanito P.
-        <div>
-          Duoc, Puente Alto
-        </div>
-      </div>
-      <div class="bloque">
-        <img class="imagen-redonda" src="../../assets/img/mono.png" alt="Foto de usuario" style="border: 2px solid white;">
-        Juanito P.
-        <div>
-          Duoc, Puente Alto
-        </div>
-      </div>
-    </div>
     <div class="primary-content">
       <div class="resp-textbox">
         <ion-icon style="padding: 5px;" name="search-outline"></ion-icon>
